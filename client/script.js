@@ -1,8 +1,5 @@
 // If in development, use localhost, otherwise use the deployed URL
-const socket = io(process.env.NODE_ENV === 'production' 
-  ? 'https://your-render-app-name.onrender.com'
-  : 'http://localhost:3000');
-
+const socket = io('https://notify-2jja.onrender.com');
 // Dynamically determine the room based on URL
 const room = window.location.pathname.split("/").pop() || "room1";
 socket.emit("join-room", room);
